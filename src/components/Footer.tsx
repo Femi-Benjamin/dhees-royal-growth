@@ -122,7 +122,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2025 Dhee's Organic Hair Treatment. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dhee's Organic Hair Treatment. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary transition-smooth">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-smooth">Terms of Service</a>

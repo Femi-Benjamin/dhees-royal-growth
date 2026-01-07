@@ -71,8 +71,9 @@ export default {
         smooth: "var(--transition-smooth)",
       },
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["Inter", "sans-serif"],
+        display: ["Archivo", "sans-serif"],
+        body: ["Archivo", "sans-serif"],
+        serif: ["Playfair Display", "serif"], // Keeping Playfair available as 'font-serif' just in case
       },
       borderRadius: {
         lg: "var(--radius)",

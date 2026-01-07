@@ -1,4 +1,4 @@
-import { Phone, ShoppingCart, Menu, Crown } from "lucide-react";
+import { Phone, ShoppingCart, Menu, Crown, ShoppingBag, Info, Star, Calendar, BookOpen, MessageSquare, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -69,39 +69,45 @@ const Header = () => {
             <nav className="hidden md:flex items-center gap-6">
               <Link
                 to="/products"
-                className="text-foreground hover:text-primary transition-smooth"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
-                Products
+                <ShoppingBag className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>Products</span>
               </Link>
               <Link
                 to="/#about"
-                className="text-foreground hover:text-primary transition-smooth"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
-                About
+                <Info className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>About</span>
               </Link>
               <Link
                 to="/#testimonials"
-                className="text-foreground hover:text-primary transition-smooth"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
-                Reviews
+                <Star className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>Reviews</span>
               </Link>
               <Link
                 to="/booking"
-                className="text-foreground hover:text-primary transition-smooth"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
-                Book Consultation
+                <Calendar className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>Book</span>
               </Link>
               <Link
                 to="/resources"
-                className="text-foreground hover:text-primary transition-smooth"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
-                Resources
+                <BookOpen className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>Resources</span>
               </Link>
               <Link
                 to="/#contact"
-                className="text-foreground hover:text-primary transition-smooth"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
-                Contact
+                <MessageSquare className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>Contact</span>
               </Link>
             </nav>
 
@@ -122,52 +128,104 @@ const Header = () => {
               <Menu className="h-6 w-6" />
             </Button>
           </div>
+        </div>
+      </header>
 
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <nav className="md:hidden mt-4 pt-4 border-t border-border flex flex-col gap-4">
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-50 bg-background/95 backdrop-blur-md animate-in fade-in duration-200">
+          {/* Close Button & Brand */}
+          <div className="absolute top-4 right-4 z-50">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(false)}
+              className="h-10 w-10 rounded-full bg-secondary/80 hover:bg-secondary text-foreground"
+            >
+              <X className="h-6 w-6" />
+              <span className="sr-only">Close menu</span>
+            </Button>
+          </div>
+
+          <div className="absolute top-4 left-4 z-50">
+            <div className="flex items-center gap-2">
+              <Crown className="h-6 w-6 text-gold" />
+              <span className="font-display font-bold text-lg">Dhee's Organic</span>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-screen gap-6 text-center">
+            <nav className="flex flex-col gap-6 w-full max-w-xs">
+              <Link
+                to="/"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link
                 to="/products"
-                className="text-foreground hover:text-primary transition-smooth py-2"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Products
+                <ShoppingBag className="w-6 h-6" />
+                Shop Products
               </Link>
               <Link
-                to="/#about"
-                className="text-foreground hover:text-primary transition-smooth py-2"
+                to="/resources"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About
-              </Link>
-              <Link
-                to="/#testimonials"
-                className="text-foreground hover:text-primary transition-smooth py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Reviews
+                <BookOpen className="w-6 h-6" />
+                Resources
               </Link>
               <Link
                 to="/booking"
-                className="text-foreground hover:text-primary transition-smooth py-2"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
                 onClick={() => setMobileMenuOpen(false)}
               >
+                <Calendar className="w-6 h-6" />
                 Book Consultation
               </Link>
               <Link
-                to="/#contact"
-                className="text-foreground hover:text-primary transition-smooth py-2"
+                to="/loyalty"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
                 onClick={() => setMobileMenuOpen(false)}
               >
+                <Crown className="w-6 h-6" />
+                Royal Rewards
+              </Link>
+              <Link
+                to="/#about"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Info className="w-6 h-6" />
+                About Us
+              </Link>
+              <Link
+                to="/#contact"
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <MessageSquare className="w-6 h-6" />
                 Contact
               </Link>
-              <Button asChild variant="hero" className="w-full">
-                <Link to="/products" onClick={() => setMobileMenuOpen(false)}>Shop Products</Link>
-              </Button>
             </nav>
-          )}
+
+            <div className="w-full max-w-xs mt-4">
+              <Button asChild size="lg" className="w-full h-12 text-lg" variant="hero">
+                <Link to="/products" onClick={() => setMobileMenuOpen(false)}>Shop Now</Link>
+              </Button>
+            </div>
+
+            <div className="mt-8 text-muted-foreground text-sm">
+              <p>Mon - Sat: 9:00 - 18:00</p>
+              <p>Sun: 10:00 - 16:00</p>
+            </div>
+          </div>
         </div>
-      </header>
+      )}
     </>
   );
 };
