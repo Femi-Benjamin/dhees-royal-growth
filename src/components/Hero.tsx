@@ -62,13 +62,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-3xl">
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            TRUE ROYALTY ALWAYS USE{' '}
-            <span className="text-primary drop-shadow-glow">DHEE'S ORGANIC</span>{' '}
-            HAIR TREATMENT
+            RESTORE YOUR CROWN WITH{' '}
+            <span className="text-primary drop-shadow-glow">ORGANIC</span>{' '}
+            HAIR CARE
           </h1>
 
           <p className="text-xl sm:text-2xl text-cream/90 mb-8 max-w-2xl">
-            Experience chemical-free, nourishing hair care that promotes natural growth and restores your crown's royal glory.
+            100% Chemical-free treatments designed to promote natural growth, strength, and shine. Experience the royal standard of hair health.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

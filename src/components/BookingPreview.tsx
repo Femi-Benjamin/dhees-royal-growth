@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Video, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BookingPreview = () => {
   return (
@@ -46,9 +47,11 @@ const BookingPreview = () => {
                     <span>Complimentary scalp massage</span>
                   </li>
                 </ul>
-                <Button variant="hero" className="w-full">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Book In-Salon
+                <Button asChild variant="hero" className="w-full">
+                  <Link to="/booking">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Book In-Salon
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -81,9 +84,11 @@ const BookingPreview = () => {
                     <span>Follow-up support via WhatsApp</span>
                   </li>
                 </ul>
-                <Button variant="outline" className="w-full">
-                  <Video className="h-4 w-4 mr-2" />
-                  Book Online
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/booking">
+                    <Video className="h-4 w-4 mr-2" />
+                    Book Online
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
