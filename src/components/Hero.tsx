@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import dheesImage from "@/assets/dhees.jpeg";
 import heroMobileImage from "@/assets/hero-products.jpg";
 import { useEffect, useRef, useState } from "react";
+import { smoothScrollToSection } from "@/lib/scroll";
 
 const Hero = () => {
   const [shouldLoadBg, setShouldLoadBg] = useState(false);
@@ -73,8 +74,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" size="xl">Shop Products</Button>
-            <Button variant="outline" size="xl">Book Consultation</Button>
+            <Button asChild variant="hero" size="xl">
+              <Link to="/products">Shop Products</Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="xl"
+              onClick={() => smoothScrollToSection("booking", 150)}
+              className="cursor-pointer"
+            >
+              Book Consultation
+            </Button>
           </div>
 
           {/* Trust Badges */}

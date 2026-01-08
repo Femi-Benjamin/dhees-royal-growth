@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
+import { smoothScrollToSection } from "@/lib/scroll";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -85,20 +86,20 @@ const Header = () => {
                 <ShoppingBag className="w-4 h-4 group-hover/link:text-gold transition-colors" />
                 <span>Products</span>
               </Link>
-              <Link
-                to="/#about"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
+              <button
+                onClick={() => smoothScrollToSection("about")}
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link bg-transparent border-none cursor-pointer"
               >
                 <Info className="w-4 h-4 group-hover/link:text-gold transition-colors" />
                 <span>About</span>
-              </Link>
-              <Link
-                to="/#testimonials"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
+              </button>
+              <button
+                onClick={() => smoothScrollToSection("testimonials")}
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link bg-transparent border-none cursor-pointer"
               >
                 <Star className="w-4 h-4 group-hover/link:text-gold transition-colors" />
                 <span>Reviews</span>
-              </Link>
+              </button>
               <Link
                 to="/booking"
                 className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
@@ -120,13 +121,13 @@ const Header = () => {
                 <BookOpen className="w-4 h-4 group-hover/link:text-gold transition-colors" />
                 <span>Resources</span>
               </Link>
-              <Link
-                to="/#contact"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
+              <button
+                onClick={() => smoothScrollToSection("contact")}
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link bg-transparent border-none cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 group-hover/link:text-gold transition-colors" />
                 <span>Contact</span>
-              </Link>
+              </button>
             </nav>
 
             {/* CTA Button */}
@@ -191,6 +192,26 @@ const Header = () => {
                 <ShoppingBag className="w-6 h-6" />
                 Shop Products
               </Link>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  smoothScrollToSection("about");
+                }}
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50 w-full bg-transparent border-none cursor-pointer"
+              >
+                <Info className="w-6 h-6" />
+                About Us
+              </button>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  smoothScrollToSection("testimonials");
+                }}
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50 w-full bg-transparent border-none cursor-pointer"
+              >
+                <Star className="w-6 h-6" />
+                Reviews
+              </button>
               <Link
                 to="/resources"
                 className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
@@ -215,22 +236,16 @@ const Header = () => {
                 <Crown className="w-6 h-6" />
                 Royal Rewards
               </Link>
-              <Link
-                to="/#about"
-                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Info className="w-6 h-6" />
-                About Us
-              </Link>
-              <Link
-                to="/#contact"
-                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  smoothScrollToSection("contact");
+                }}
+                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50 w-full bg-transparent border-none cursor-pointer"
               >
                 <MessageSquare className="w-6 h-6" />
                 Contact
-              </Link>
+              </button>
             </nav>
 
             <div className="w-full max-w-xs mt-4">

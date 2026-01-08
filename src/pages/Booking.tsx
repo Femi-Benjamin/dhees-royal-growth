@@ -116,7 +116,7 @@ const Booking = () => {
               </Select>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 ">
               <div className="space-y-2">
                 <Label>Preferred Date *</Label>
                 <Popover>
@@ -124,7 +124,7 @@ const Booking = () => {
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal",
+                        "w-full justify-start text-left font-normal border border-border",
                         !date && "text-muted-foreground"
                       )}
                     >
