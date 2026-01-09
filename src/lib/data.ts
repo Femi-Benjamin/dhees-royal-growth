@@ -36,7 +36,7 @@ export const products = [
     reviews: 56,
   },
   {
-    id: "4",
+    id: 4,
     name: "Treatment Balm",
     category: "Treatment",
     price: 450,

@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "@/context/CartContext";
+import { useCart } from "@/hooks/useCart";
 import { smoothScrollToSection } from "@/lib/scroll";
 
 const Header = () => {
